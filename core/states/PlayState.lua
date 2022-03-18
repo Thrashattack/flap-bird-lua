@@ -15,12 +15,25 @@ function PlayState:init()
     self.pipePairs = {}
     self.timer = 0
     self.score = 0
+    if Config.player then
+        self.highScore = Config.player.HIGH_SCORE
+    else
+        Config.player = {
+            HIGH_SCORE = 0,
+        }
+        self.highScore = 0
+    end
+
 
     -- initialize our last recorded Y value for a gap placement to base other gaps off of
     self.lastY = -Config.pipe.PIPE_HEIGHT + math.random(80) + 20
 end
 
 function PlayState:update(dt)
+    if self.score > self.highScore then
+        self.highScore = self.score
+        Config.player.highScore = self.score
+    end
     -- update timer for pipe spawning
     self.timer = self.timer + dt
 
@@ -101,6 +114,7 @@ function PlayState:render()
 
     love.graphics.setFont(FlappyFont)
     love.graphics.print('Score: ' .. tostring(self.score), 8, 8)
+    love.graphics.print('High Score: ' .. tostring(self.highScore), 256, 8)
 
     self.bird:render()
 end
