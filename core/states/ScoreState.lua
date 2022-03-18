@@ -16,6 +16,8 @@ ScoreState = Class{__includes = BaseState}
 ]]
 function ScoreState:enter(params)
     self.score = params.score
+    
+    Inifile.save('config.ini', Config)
 end
 
 function ScoreState:update(dt)
@@ -25,7 +27,7 @@ function ScoreState:update(dt)
     end
     if love.keyboard.wasPressed('escape') or love.keyboard.wasPressed('esc') then
         GStateMachine:change('title')
-    end
+    end    
 end
 
 function ScoreState:render()
