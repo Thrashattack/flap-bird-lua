@@ -116,7 +116,7 @@ function SettingsState:render()
 
     love.graphics.setFont(MediumFont)
     love.graphics.printf('Press E to set level Easy', 0, 100, Config.defaults.VIRTUAL_WIDTH, 'center')
-    love.graphics.printf('Press M to set level Medium', 0, 150, Config.defaults.VIRTUAL_WIDTH, 'center')
-    love.graphics.printf('Press H to set level Hard(Beware!)', 0, 200, Config.defaults.VIRTUAL_WIDTH, 'center')
+    love.graphics.printf('Press M to set level Medium', 0, 130, Config.defaults.VIRTUAL_WIDTH, 'center')
+    love.graphics.printf('Press H to set level Hard(Beware!)', 0, 160, Config.defaults.VIRTUAL_WIDTH, 'center')
     love.graphics.printf('Press Esc or escape to main menu', 0, 225, Config.defaults.VIRTUAL_WIDTH, 'center')
 end
