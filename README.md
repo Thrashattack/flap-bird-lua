@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://c.tenor.com/WuaZ4G33BBoAAAAM/flappy-bird-flying.gif" />
+</p>
+
+
 # flap-bird-lua
 
 - This was only possible because of the work of Colton T. Ogden and Harvard's CS50. 
